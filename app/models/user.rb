@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+  has_many :decks, foreign_key: :creator_id
+  has_many :rounds, foreign_key: :player_id
+
   validates :username, presence:true
   validates :email, presence:true
   validates :password_hash, presence:true
-  # Remember to create a migration!
 
   def self.authenticate(login_credentials)
     user = User.find_by(username: login_credentials[:username])

@@ -1,7 +1,9 @@
 class Deck < ApplicationRecord
-  belongs_to :creator_id, class_name: :User
+  belongs_to :creator, class_name: "User"
   has_many :cards
+  has_many :rounds
 
-  validates :category, :private, :creator_id, presence: true
-  
+  validates :category, :creator_id, presence: true
+  validates :private, presence: true, exclusion: { in: [nil] }
+
 end
