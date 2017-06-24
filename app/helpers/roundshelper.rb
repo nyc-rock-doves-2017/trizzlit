@@ -1,13 +1,11 @@
-def current_round=(round)
-  @current_round = round
-end
-
 def current_round
-  @current_round
+  p "You reached the current round method"
+  round_id = session[:round_id]
+  Round.find_by(id: round_id)
 end
 
 def current_card=(card)
-  @current_card
+  @current_card = card
 end
 
 def current_card

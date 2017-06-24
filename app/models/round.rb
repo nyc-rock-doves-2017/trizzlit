@@ -8,13 +8,17 @@ class Round < ApplicationRecord
   validates :player_id, presence: true
   validates :deck_id, presence: true
 
+  def cards_in_game
+    @cards_in_game ||= self.shuffle_the_cards
+  end
+
   # Shuffle the cards for the current round
-  def shuffle_the_cards(deck_id)
-    @cards_in_game = self.Deck.find_by(id: deck_id).cards.shuffle
+  def shuffle_the_cards
+    @cards_in_game = self.deck.cards.shuffle
   end
 
   # take_last_card
   def pick_a_card
-    @card = @cards_in_game.pop
+    self.cards_in_game.pop
   end
 end
