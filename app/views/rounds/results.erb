@@ -1,0 +1,23 @@
+<span> Congrats! You finished the round. Here are your results: </span>
+<table>
+  <tr>
+    <th> Status </th>
+    <th> Total </th>
+    <th> % </th>
+  </tr>
+  <tr>
+    <td> Wins </td>
+    <td> <%= @results.where(result: 'win').count %> </td>
+    <td> <%= @results.where(result: 'win').count %>/<%= @results.count %> </td>
+  </tr>
+  <tr>
+    <td> Losses </td>
+    <td> <%= @results.where(result: 'lose').count %> </td>
+    <td> <%= @results.where(result: 'lose').count %>/<%= @results.count %> </td>
+  </tr>
+  <tr>
+    <td> No Result </td>
+    <td> <%= @results.where(result: 'No Result').count %> </td>
+    <td> <%= @results.where(result: 'No Result').count %>/<%= @results.count %> </td>
+  </tr>
+</table>
