@@ -1,20 +1,20 @@
 # cards responsibility is to show all the cards in a deck
-get '/card' do
+get '/cards/:id' do
+  # @current_card = last_guessed_card
+  p ""
+  p session
   erb :'cards/display_card'
-  # redirect '/guesses'
 end
 
-get '/card/:id' do
-end
 
-get '/card/:id/answer' do
-  # comes after guesses
+get '/cards/:id/answer' do
+  erb :'cards/answer'
 end
 
 get '/cards/new' do
 
 end
 
-post '/card/' do
+post '/cards/' do
 
 end

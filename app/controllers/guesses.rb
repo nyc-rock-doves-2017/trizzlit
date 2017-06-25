@@ -1,7 +1,27 @@
 get '/guesses/new' do
-  erb :'guesses/new_guess'
+  @current_card = current_round.pick_a_card
+  p "^"*100
+  p @current_card
+    if @current_card.nil?
+      redirect '/rounds/results'
+    else
+      # Create a new record for the guess
+      current_round.guesses.create({
+        card_id: @current_card.id,
+        result: "No result"
+        })
+      redirect "/cards/#{@current_card.id}"
+    end
 end
 
+# If the card doesn't exist, they don't get to store the result
 post '/guesses' do
-  "ENTER GUESS LOGIC"
+  guess_result = result_message(params[:user_guess])
+  p "GUESS Result"
+  p guess_result
+  current_round.guesses.where(card_id: last_guessed_card).last.update_attributes({
+    result: guess_result
+    })
+  redirect "/cards/#{last_guessed_card}/answer"
+  # redirect them to the answer page
 end

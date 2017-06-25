@@ -1,0 +1,9 @@
+<div class="card">
+  <h1 align="center"><%= last_guess.result %> </h1>
+
+    <p align="center"><%= Card.find_by(id: last_guessed_card).answer %></p><br>
+
+  <form action='/guesses/new'>
+    <input type="submit" value="Next">
+  </form>
+</div>
