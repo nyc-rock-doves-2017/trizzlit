@@ -3,6 +3,7 @@ div.heading {
     color: white;
     margin: 20px 0 20px 0;
     padding: 5px;
+    font-family: 'Indie Flower', cursive;
 }
 
 h1 {
@@ -16,7 +17,8 @@ h1 {
   height: 2%;
   float: center;
   padding: 5px;
-  text-align: left;
+  position: relative;
+  top: 50px;
 }
 
 p {
@@ -28,15 +30,23 @@ p {
   border-style: solid;
   border-top-width: 10px;
   border-top-color: grey;
-  display: inline-block;
-  align: center;
+  position: relative;
+  left: 38%;
   font-family: 'Indie Flower', cursive;
 }
 
-div.card {
-  align-self: center;
-  left: 200px;
+.trizzlit {
+  font-size: 3em;
+  position: relative;
+  left: 5%;
+  bottom: 26px;
 }
+
+form {
+  position: relative;
+  left: 45%;
+}
+
 
 
 /*image source = http://apps.fellowes.com/microsite/IdeaCenter/projects/school/flash-cards/math-multiplication/preview.png*/
