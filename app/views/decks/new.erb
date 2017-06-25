@@ -1,0 +1,25 @@
+<h1>Create a Trizzlit Deck</h1>
+
+<main class="form-wrapper" role="main">
+
+  <% if @errors %>
+    <div class="errors-wrapper">
+      <span>Your entry could not be saved:</span>
+      <ul class="errors">
+        <% @errors.each do |error| %>
+          <li class="error"><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <form method="post" action="/decks">
+    <label for="deck-category">Deck name:</label><br>
+    <input id="deck-category" name="deck[category]" type="text" >
+
+    <input id="creator-imput" name="deck[creator_id]" type="hidden" >
+    <br><br>
+    <input type="submit" value="Create Deck" class="button">
+  </form>
+</main>

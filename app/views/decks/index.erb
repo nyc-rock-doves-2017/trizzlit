@@ -1,0 +1,8 @@
+ <dir><h1>Trizzlit Decks</h1></dir>
+ <main role="main">
+  <ul class="decks-list">
+    <% @decks.each do |deck| %>
+      <p><a href="<%="/decks/#{deck.id}" %>"><%= deck.category.capitalize! %></a></p>
+    <% end %>
+  </ul>
+</main>
