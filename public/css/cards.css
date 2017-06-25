@@ -1,0 +1,44 @@
+div.heading {
+    background-color: black;
+    color: white;
+    margin: 20px 0 20px 0;
+    padding: 5px;
+}
+
+h1 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 4em;
+  color: #ffcc00;
+}
+
+.logo {
+  width: 5%;
+  height: 2%;
+  float: center;
+  padding: 5px;
+  text-align: left;
+}
+
+p {
+  height: 250px;
+  width: 25%;
+  font-size: 3em;
+  background-color: white;
+  border-width: thin;
+  border-style: solid;
+  border-top-width: 10px;
+  border-top-color: grey;
+  display: inline-block;
+  align: center;
+  font-family: 'Indie Flower', cursive;
+}
+
+div.card {
+  align-self: center;
+  left: 200px;
+}
+
+
+/*image source = http://apps.fellowes.com/microsite/IdeaCenter/projects/school/flash-cards/math-multiplication/preview.png*/
+
+/*http://apps.fellowes.com/microsite/IdeaCenter/idea/school/flash-cards/math-multiplication*/
