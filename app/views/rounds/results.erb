@@ -6,18 +6,30 @@
     <th> % </th>
   </tr>
   <tr>
-    <td> Wins </td>
+    <td> Wins (All Attempts) </td>
     <td> <%= @results.where(result: 'win').count %> </td>
-    <td> <%= @results.where(result: 'win').count %>/<%= @results.count %> </td>
+    <td> <%= current_round.find_percentage_by('win', 2) %> </td>
   </tr>
+  <tr>
+    <td> Wins (Correct First Attempt) </td>
+    <td> <%= current_round.cards_guessed_correctly_the_first_time %> </td>
+    <td> <%= current_round.find_percentage_for_first_attempts%> </td>
+  </tr>
+  <tr>
+  <tr>
   <tr>
     <td> Losses </td>
     <td> <%= @results.where(result: 'lose').count %> </td>
-    <td> <%= @results.where(result: 'lose').count %>/<%= @results.count %> </td>
+    <td> <%= current_round.find_percentage_by('lose', 2) %></td>
   </tr>
   <tr>
     <td> No Result </td>
     <td> <%= @results.where(result: 'No Result').count %> </td>
-    <td> <%= @results.where(result: 'No Result').count %>/<%= @results.count %> </td>
+    <td> <%= current_round.find_percentage_by('No result', 2) %> </td>
+  </tr>
+  <tr>
+    <td> Total tries </td>
+    <td> <%= @results.count %> </td>
+    <td> - </td>
   </tr>
 </table>
