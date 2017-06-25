@@ -24,7 +24,7 @@ end
 
 
 # Create 20 cards for Deck 1 for testing
-20.times do
+2.times do
   Card.create({
     deck_id: 1,
     question: Faker::Lorem.sentence,

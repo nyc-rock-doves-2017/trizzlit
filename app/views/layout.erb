@@ -18,9 +18,26 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Trizzlit Deck</title>
 </head>
 <body>
+  <div class="heading">
+    <footer>
+      <img class="logo" src="http://apps.fellowes.com/microsite/IdeaCenter/projects/school/flash-cards/math-multiplication/preview.png"></img>
+    </footer>
+
+    <footer class='trizzlit'>
+      Trizzlit
+    </footer>
+
+      <footer align="right">
+        <a href="/user/user.id" style="color:white">PROFILE</a> | <a href="/user/user.id" style="color:white">LOGOUT</a> | <a href="/rounds/new?id=1" style="color:white">HOME</a>
+      </footer>
+
+  </div>
+
   <%= yield %>
+  <footer></footer>
 </body>
+<footer> Image Source: http://apps.fellowes.com/microsite/IdeaCenter/idea/school/flash-cards/math-multiplication </footer>
 </html>

@@ -8,9 +8,14 @@ def last_guessed_card
   current_round.guesses.last.card_id
 end
 
+# Shows last guess
+def last_guess
+  current_round.guesses.last
+end
+
 # Only keeps track of first guesses
 def result_message(response)
-  original_card = Card.find_by(id: last_guessed_card.id)
+  original_card = Card.find_by(id: last_guessed_card)
   if original_card.answer == response
     return "win"
   else
