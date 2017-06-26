@@ -5,7 +5,7 @@ end
 post '/sessions' do
   if User.authenticate(params[:user])
   session[:user_id] = User.find_by(username: params[:user][:username]).id
-  redirect '/'
+  redirect '/users/profile'
   else
     "Login Failed"
   end

@@ -26,7 +26,7 @@
         <%if logged_in? == false%>
           <a href="/users/new" style="color:white">SIGN UP</a> | <a href="/sessions/new" style="color:white">LOG IN</a>
         <% else %>
-          Hello, <%= current_user.username %> | <a href="/logout" style="color:white">LOG OUT </a>
+          Hello, <%= current_user.username %> | <a href="/users/profile" style="color:white">PROFILE </a> | <a href="/logout" style="color:white">LOG OUT </a>
         <% end %>
         | <a href="/" style="color:white">HOME</a>
       </footer>
