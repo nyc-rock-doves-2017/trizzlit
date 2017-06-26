@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/cards.css">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -23,12 +23,17 @@
     </footer>
 
       <footer align="right">
-        <a href="/user/user.id" style="color:white">PROFILE</a> | <a href="/user/user.id" style="color:white">LOGOUT</a> | <a href="/rounds/new?id=1" style="color:white">HOME</a>
+        <%if logged_in? == false%>
+          <a href="/users/new" style="color:white">SIGN UP</a> | <a href="/sessions/new" style="color:white">LOG IN</a>
+        <% else %>
+          Hello, <%= current_user.username %> | <a href="/users/profile" style="color:white">PROFILE </a> | <a href="/logout" style="color:white">LOG OUT </a>
+        <% end %>
+        | <a href="/" style="color:white">HOME</a>
       </footer>
 
   </div>
   <%= yield %>
   <footer></footer>
 </body>
-<footer> Image Source: http://apps.fellowes.com/microsite/IdeaCenter/idea/school/flash-cards/math-multiplication </footer>
+<!-- <footer> Image Source: http://apps.fellowes.com/microsite/IdeaCenter/idea/school/flash-cards/math-multiplication </footer> -->
 </html>

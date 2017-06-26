@@ -12,3 +12,9 @@ post '/users' do
       erb :'/users/new'
     end
 end
+
+
+get '/users/profile' do
+  @user = User.new
+  erb :'/users/profile'
+end
