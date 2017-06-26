@@ -15,13 +15,7 @@ end
 
 # Only keeps track of first guesses
 def result_message(response)
-  p "*"*100
-  p "Your response:"
-  p response
-  p "OG Card"
   original_card = Card.find_by(id: last_guessed_card)
-  p "Match"
-  p original_card.answer == response
   if original_card.answer == response
     return "win"
   else
