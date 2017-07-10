@@ -1,7 +1,5 @@
 get '/guesses/new' do
   @current_card = current_round.pick_a_card
-  p "^"*100
-  p @current_card
     if @current_card.nil?
       redirect '/rounds/results'
     else
@@ -17,8 +15,6 @@ end
 # If the card doesn't exist, they don't get to store the result
 post '/guesses' do
   guess_result = result_message(params[:user_guess])
-  p "GUESS Result"
-  p guess_result
   current_round.guesses.where(card_id: last_guessed_card).last.update_attributes({
     result: guess_result
     })

@@ -4,6 +4,5 @@ class Deck < ApplicationRecord
   has_many :rounds
 
   validates :category, :creator_id, presence: true
-  # validates :private, presence: true, inclusion: { in: [true, false] }
 
 end
